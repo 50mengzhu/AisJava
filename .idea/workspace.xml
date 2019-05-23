@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5039b337-0f6a-4e87-8ad0-e24a89a74ea5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java/ais/dx/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java/ais/dx/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java/ais/dx/Process/KNN$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java/ais/dx/Process/KNN$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java/ais/dx/Process/KNN.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java/ais/dx/Process/KNN.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java/ais/dx/ReadCSV/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java/ais/dx/ReadCSV/Position.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java/ais/dx/Util/Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java/ais/dx/Util/Util.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ais/dx/Config/ConstNum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ais/dx/Config/ConstNum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ais/dx/Config/UserConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ais/dx/Config/UserConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ais/dx/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ais/dx/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ais/dx/Process/KNN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ais/dx/Process/KNN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ais/dx/ReadCSV/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ais/dx/ReadCSV/Position.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ais/dx/Util/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ais/dx/Util/Util.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ais/dx/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ais/dx/ReadCSV/Vector.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+              <folding>
+                <element signature="docComment;class#Vector#0" />
+                <element signature="method#Vector#0;class#Vector#0" />
+                <element signature="method#Vector#1;class#Vector#0" />
+                <element signature="docComment;method#crossProduct#0;class#Vector#0" />
+                <element signature="docComment;method#dotProduct#0;class#Vector#0" />
+                <element signature="docComment;method#norm#0;class#Vector#0" />
+                <element signature="docComment;method#slope#0;class#Vector#0" />
+                <element signature="method#slope#0;class#Vector#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ais/dx/ReadCSV/Position.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
+              <folding>
+                <element signature="docComment;class#Position#0" />
+                <element signature="method#Position#1;class#Position#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ais/dx/Util/Util.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="627">
+              <caret line="134" column="39" selection-start-line="134" selection-start-column="22" selection-end-line="134" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;class#Util#0" />
+                <element signature="docComment;method#isLeapYear#0;class#Util#0" />
+                <element signature="method#isLeapYear#0;class#Util#0" />
+                <element signature="docComment;method#getDay#0;class#Util#0" />
+                <element signature="method#getDay#0;class#Util#0" />
+                <element signature="docComment;method#isPOI#0;class#Util#0" />
+                <element signature="method#isPOI#0;class#Util#0" />
+                <element signature="docComment;method#calArea#0;class#Util#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ais/dx/Config/UserConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="23" column="49" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
+              <folding>
+                <element signature="docComment;class#UserConfig#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ais/dx/Config/ConstNum.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ais/dx/ReadCSV/ReadCSV.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2014">
+              <caret line="121" selection-start-line="121" selection-end-line="121" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#ReadCSV#0;class#ReadCSV#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ais/dx/ReadCSV/Point.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="627">
+              <caret line="33" column="11" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="11" />
+              <folding>
+                <element signature="method#Point#1;class#Point#0" />
+                <element signature="method#distance#0;class#Point#0" />
+                <element signature="method#equals#0;class#Point#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ais/dx/Util/MaxHeap.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1444">
+              <caret line="89" column="23" selection-start-line="89" selection-start-column="23" selection-end-line="89" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;method#buildMaxHeap#0;class#MaxHeap#0" />
+                <element signature="docComment;method#heapify#0;class#MaxHeap#0" />
+                <element signature="docComment;method#swap#0;class#MaxHeap#0" />
+                <element signature="docComment;method#topMinK#0;class#MaxHeap#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ais/dx/Process/KNN.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="38" selection-start-line="38" selection-end-line="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;class#KNN#0" />
+                <element signature="docComment;method#clear#0;class#KNN#0" />
+                <element signature="docComment;method#getAlphaHull#0;class#KNN#0" />
+                <element signature="docComment;method#concaveHull#0;class#KNN#0" />
+                <element signature="method#concaveHull#0;class#KNN#0" />
+                <element signature="docComment;method#findMinYPoint#0;class#KNN#0" />
+                <element signature="method#findMinYPoint#0;class#KNN#0" />
+                <element signature="docComment;method#nearestPoints#0;class#KNN#0" />
+                <element signature="method#nearestPoints#0;class#KNN#0" />
+                <element signature="docComment;method#sortByAngle#0;class#KNN#0" />
+                <element signature="method#sortByAngle#0;class#KNN#0" />
+                <element signature="docComment;method#intersect#0;class#KNN#0" />
+                <element signature="method#intersect#0;class#KNN#0" />
+                <element signature="docComment;method#calAngle#0;class#KNN#0" />
+                <element signature="method#calAngle#0;class#KNN#0" />
+                <element signature="docComment;method#pointInPoly#0;class#KNN#0" />
+                <element signature="method#pointInPoly#0;class#KNN#0" />
+                <element signature="docComment;method#calRelationAngle#0;class#KNN#0" />
+                <element signature="method#calRelationAngle#0;class#KNN#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/ais/dx/Point/Point.java" />
+        <option value="$PROJECT_DIR$/src/ais/dx/Position/Position.java" />
+        <option value="$PROJECT_DIR$/src/ais/dx/Config/Config.java" />
+        <option value="$PROJECT_DIR$/src/ais/dx/DB/DB.java" />
+        <option value="$PROJECT_DIR$/src/ais/dx/Config/Constant.java" />
+        <option value="$PROJECT_DIR$/src/ais/dx/ReadCSV/Point.java" />
+        <option value="$PROJECT_DIR$/src/ais/dx/ReadCSV/Vector.java" />
+        <option value="$PROJECT_DIR$/src/ais/dx/ReadCSV/ReadCSV.java" />
+        <option value="$PROJECT_DIR$/src/ais/dx/Util/MaxHeap.java" />
+        <option value="$PROJECT_DIR$/src/ais/dx/Util/Util.java" />
+        <option value="$PROJECT_DIR$/src/ais/dx/Config/ConstNum.java" />
+        <option value="$PROJECT_DIR$/src/ais/dx/Process/KNN.java" />
+        <option value="$PROJECT_DIR$/src/ais/dx/ReadCSV/Position.java" />
+        <option value="$PROJECT_DIR$/src/ais/dx/Config/UserConfig.java" />
+        <option value="$PROJECT_DIR$/src/ais/dx/Main.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="980" />
+    <option name="height" value="1040" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dx" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dx" type="462c0819:PsiDirectoryNode" />
+              <item name="Config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dx" type="462c0819:PsiDirectoryNode" />
+              <item name="Process" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dx" type="462c0819:PsiDirectoryNode" />
+              <item name="ReadCSV" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dx" type="462c0819:PsiDirectoryNode" />
+              <item name="Util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="D:/Program Files/Java/jdk1.8.0_151/jre/lib/ext/mysql-connector-java-8.0.15.jar!/" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="ais.dx.Main" />
+      <module name="Java" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5039b337-0f6a-4e87-8ad0-e24a89a74ea5" name="Default Changelist" comment="" />
+      <created>1556367068549</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1556367068549</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <layout>
+      <window_info id="Designer" order="0" />
+      <window_info id="UI Designer" order="1" />
+      <window_info id="Learn" order="2" />
+      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.20710456" />
+      <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="0" weight="0.2503536" />
+      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.50067025" side_tool="true" weight="0.49787837" />
+      <window_info anchor="bottom" id="Messages" order="2" weight="0.3281471" />
+      <window_info anchor="bottom" id="Message" order="3" />
+      <window_info anchor="bottom" id="Version Control" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49932975" weight="0.34844193" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.19943424" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="right" id="Palette&#9;" order="0" />
+      <window_info anchor="right" id="Maven" order="1" weight="0.3297587" />
+      <window_info anchor="right" id="Palette" order="2" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="3" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.2496" />
+      <window_info anchor="right" id="Ant Build" order="5" weight="0.24932976" />
+    </layout>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ais/dx/Main.java</url>
+          <line>50</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ais/dx/Process/KNN.java</url>
+          <line>206</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="currentPoint" language="JAVA" />
+        <watch expression="nearestKPoints" language="JAVA" />
+        <watch expression="sortedPoints" language="JAVA" />
+        <watch expression="alphaHull" language="JAVA" />
+        <watch expression="j" language="JAVA" />
+        <watch expression="knn" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>alphaHull</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>knn</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>j</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>sortedPoints</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>nearestKPoints</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>currentPoint</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>firstPoint</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>alphaHull</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>pointSet.get(1534)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>alphaHull.get(24).getPosition()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>alphaHull.get(23).getPosition()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>alphaHull.get(22).getPosition()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>alphaHull.get(21).getPosition()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>alphaHull.get(20).getPosition()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>alphaHull.get(19).getPosition()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>alphaHull.get(18).getPosition()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/ais/dx/Position/Position.java" />
+    <entry file="file://$PROJECT_DIR$/src/ais/dx/Point/Point.java" />
+    <entry file="file://$PROJECT_DIR$/src/ais/dx/Config/Config.java" />
+    <entry file="file://$PROJECT_DIR$/src/ais/dx/Data/ais_data.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="-23994">
+          <caret line="23" column="109" lean-forward="true" selection-start-line="23" selection-start-column="109" selection-end-line="23" selection-end-column="109" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ais/dx/Data/position_part_1.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="109" lean-forward="true" selection-start-line="15" selection-start-column="109" selection-end-line="15" selection-end-column="109" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files/Java/jdk1.8.0_151/src.zip!/java/net/URLClassLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="380" column="18" selection-start-line="380" selection-start-column="18" selection-end-line="380" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files/Java/jdk1.8.0_151/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="1462" column="9" lean-forward="true" selection-start-line="1462" selection-start-column="9" selection-end-line="1462" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files/Java/jdk1.8.0_151/src.zip!/java/util/TimSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="742" column="38" lean-forward="true" selection-start-line="742" selection-start-column="38" selection-end-line="742" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files/Java/jdk1.8.0_151/src.zip!/java/util/Vector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="129" column="11" selection-start-line="129" selection-start-column="11" selection-end-line="129" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ais/dx/Config/Constant.java" />
+    <entry file="jar://D:/Program Files/Java/jdk1.8.0_151/src.zip!/java/lang/Math.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="102" column="3" lean-forward="true" selection-start-line="102" selection-start-column="3" selection-end-line="102" selection-end-column="3" />
+          <folding>
+            <element signature="e#7835#7836#0" expanded="true" />
+            <element signature="e#7917#7918#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files/Java/jdk1.8.0_151/src.zip!/java/lang/StrictMath.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="155" column="32" selection-start-line="155" selection-start-column="32" selection-end-line="155" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ais/dx/DB/DB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+          <folding>
+            <element signature="docComment;class#DB#0" />
+            <element signature="docComment;method#getShipInfo#0;class#DB#0" />
+            <element signature="method#getShipInfo#0;class#DB#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ais/dx/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ais/dx/ReadCSV/Vector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+          <folding>
+            <element signature="docComment;class#Vector#0" />
+            <element signature="method#Vector#0;class#Vector#0" />
+            <element signature="method#Vector#1;class#Vector#0" />
+            <element signature="docComment;method#crossProduct#0;class#Vector#0" />
+            <element signature="docComment;method#dotProduct#0;class#Vector#0" />
+            <element signature="docComment;method#norm#0;class#Vector#0" />
+            <element signature="docComment;method#slope#0;class#Vector#0" />
+            <element signature="method#slope#0;class#Vector#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ais/dx/ReadCSV/Position.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="docComment;class#Position#0" />
+            <element signature="method#Position#1;class#Position#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ais/dx/Util/Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="134" column="39" selection-start-line="134" selection-start-column="22" selection-end-line="134" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#Util#0" />
+            <element signature="docComment;method#isLeapYear#0;class#Util#0" />
+            <element signature="method#isLeapYear#0;class#Util#0" />
+            <element signature="docComment;method#getDay#0;class#Util#0" />
+            <element signature="method#getDay#0;class#Util#0" />
+            <element signature="docComment;method#isPOI#0;class#Util#0" />
+            <element signature="method#isPOI#0;class#Util#0" />
+            <element signature="docComment;method#calArea#0;class#Util#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ais/dx/Config/UserConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="23" column="49" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
+          <folding>
+            <element signature="docComment;class#UserConfig#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ais/dx/Config/ConstNum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ais/dx/ReadCSV/ReadCSV.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2014">
+          <caret line="121" selection-start-line="121" selection-end-line="121" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#ReadCSV#0;class#ReadCSV#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ais/dx/ReadCSV/Point.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="33" column="11" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="11" />
+          <folding>
+            <element signature="method#Point#1;class#Point#0" />
+            <element signature="method#distance#0;class#Point#0" />
+            <element signature="method#equals#0;class#Point#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ais/dx/Util/MaxHeap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1444">
+          <caret line="89" column="23" selection-start-line="89" selection-start-column="23" selection-end-line="89" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#buildMaxHeap#0;class#MaxHeap#0" />
+            <element signature="docComment;method#heapify#0;class#MaxHeap#0" />
+            <element signature="docComment;method#swap#0;class#MaxHeap#0" />
+            <element signature="docComment;method#topMinK#0;class#MaxHeap#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ais/dx/Process/KNN.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#KNN#0" />
+            <element signature="docComment;method#clear#0;class#KNN#0" />
+            <element signature="docComment;method#getAlphaHull#0;class#KNN#0" />
+            <element signature="docComment;method#concaveHull#0;class#KNN#0" />
+            <element signature="method#concaveHull#0;class#KNN#0" />
+            <element signature="docComment;method#findMinYPoint#0;class#KNN#0" />
+            <element signature="method#findMinYPoint#0;class#KNN#0" />
+            <element signature="docComment;method#nearestPoints#0;class#KNN#0" />
+            <element signature="method#nearestPoints#0;class#KNN#0" />
+            <element signature="docComment;method#sortByAngle#0;class#KNN#0" />
+            <element signature="method#sortByAngle#0;class#KNN#0" />
+            <element signature="docComment;method#intersect#0;class#KNN#0" />
+            <element signature="method#intersect#0;class#KNN#0" />
+            <element signature="docComment;method#calAngle#0;class#KNN#0" />
+            <element signature="method#calAngle#0;class#KNN#0" />
+            <element signature="docComment;method#pointInPoly#0;class#KNN#0" />
+            <element signature="method#pointInPoly#0;class#KNN#0" />
+            <element signature="docComment;method#calRelationAngle#0;class#KNN#0" />
+            <element signature="method#calRelationAngle#0;class#KNN#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
