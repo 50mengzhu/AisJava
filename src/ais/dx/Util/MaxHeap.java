@@ -1,6 +1,7 @@
 package ais.dx.Util;
 
 import ais.dx.ReadCSV.Point;
+import ais.dx.ReadCSV.Position;
 
 import java.util.ArrayList;
 
@@ -14,16 +15,16 @@ import java.util.ArrayList;
  * @version 1.0
  */
 public class MaxHeap {
-    Point currentPoint;
-    private ArrayList<Point> data;
+    Position currentPosition;
+    private ArrayList<Position> data;
 
-    public MaxHeap(Point curPoint) {
+    public MaxHeap(Position curPosition) {
         data = new ArrayList<>();
-        currentPoint = curPoint;
+        currentPosition = curPosition;
     }
 
-    public MaxHeap(ArrayList<Point> array, Point curPoint) {
-        this.currentPoint = curPoint;
+    public MaxHeap(ArrayList<Position> array, Position curPosition) {
+        this.currentPosition = curPosition;
         this.data = array;
         buildMaxHeap();
     }
@@ -47,10 +48,10 @@ public class MaxHeap {
         int rightIndex      = (index + 1) << 1;
         int biggestIndex    = index;
 
-        if (leftIndex < data.size() && Double.compare(currentPoint.distance(data.get(leftIndex)), currentPoint.distance(data.get(biggestIndex))) > 0) {
+        if (leftIndex < data.size() && Double.compare(currentPosition.distance(data.get(leftIndex)), currentPosition.distance(data.get(biggestIndex))) > 0) {
             biggestIndex = leftIndex;
         }
-        if (rightIndex < data.size() && Double.compare(currentPoint.distance(data.get(rightIndex)), currentPoint.distance(data.get(biggestIndex))) > 0) {
+        if (rightIndex < data.size() && Double.compare(currentPosition.distance(data.get(rightIndex)), currentPosition.distance(data.get(biggestIndex))) > 0) {
             biggestIndex = rightIndex;
         }
 
@@ -68,7 +69,7 @@ public class MaxHeap {
      * @param j
      * **/
     private void swap(int i, int j) {
-        Point temp = data.get(i);
+        Position temp = data.get(i);
         data.set(i, data.get(j));
         data.set(j, temp);
     }
@@ -77,7 +78,7 @@ public class MaxHeap {
      * @param dataSet 待查找的数据集
      * @param k 待查找的数据的个数
      * **/
-    public ArrayList<Point> topMinK(ArrayList<Point> dataSet, int  k) {
+    public ArrayList<Position> topMinK(ArrayList<Position> dataSet, int  k) {
         if (k >= dataSet.size()) {
             return dataSet;
         }
@@ -90,9 +91,9 @@ public class MaxHeap {
         buildMaxHeap();
 
         for (int i = k; i < dataSet.size(); ++ i) {
-            double root = currentPoint.distance(data.get(0));
+            double root = currentPosition.distance(data.get(0));
 
-            if (Double.compare(root, currentPoint.distance(dataSet.get(i))) > 0) {
+            if (Double.compare(root, currentPosition.distance(dataSet.get(i))) > 0) {
                 data.set(0, dataSet.get(i));
                 heapify(0);
             }

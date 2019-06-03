@@ -2,6 +2,7 @@ package ais.dx.Util;
 
 import ais.dx.Config.UserConfig;
 import ais.dx.ReadCSV.Point;
+import ais.dx.ReadCSV.Position;
 import ais.dx.ReadCSV.Vector;
 
 import java.util.ArrayList;
@@ -120,15 +121,15 @@ public class Util {
      * @param points
      * @return 返回表示传入的点集是空，否则返回正常的面积
      * **/
-    public static double calArea(ArrayList<Point> points) {
+    public static double calArea(ArrayList<Position> points) {
         if (points == null) {
             return 0.0;
         }
         double area = new Double(0);
 
         for (int startIndex = 0, endIndex = 1; endIndex < points.size(); startIndex = endIndex ++) {
-            Vector vectorStart = new Vector(new Point(), points.get(startIndex));
-            Vector vectorEnd   = new Vector(new Point(), points.get(endIndex));
+            Vector vectorStart = new Vector(new Position(), points.get(startIndex));
+            Vector vectorEnd   = new Vector(new Position(), points.get(endIndex));
 
             area += vectorStart.crossProduct(vectorEnd) * 0.5;
         }
