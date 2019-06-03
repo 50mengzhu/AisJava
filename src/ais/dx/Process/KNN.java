@@ -1,6 +1,7 @@
 package ais.dx.Process;
 
 import ais.dx.ReadCSV.Point;
+import ais.dx.ReadCSV.Position;
 import ais.dx.Util.MaxHeap;
 
 import java.util.ArrayList;
@@ -21,31 +22,29 @@ import static java.lang.Math.PI;
  * @version 1.0
  */
 public class KNN {
-    private ArrayList<Point> alphaHull;
+    private ArrayList<Position> alphaConvexHull;
     public static int SUCCESS               = 1;
     public static int RECALCULATE           = 2;
     public static int POINT_NUM_NOT_ENOUGH  = -1;
 
     public KNN() {
-        alphaHull = new ArrayList<>();
+        alphaConvexHull = new ArrayList<>();
     }
 
     /**
      * 清空结果的所有数据
      * **/
     public void clear() {
-        alphaHull.clear();
+        alphaConvexHull.clear();
     }
 
-    /**
-     * @return 返回本类的私有成员alphaHull
-     * */
-    public ArrayList<Point> getAlphaHull() {
-        return alphaHull;
+    public ArrayList<Position> getAlphaConvexHull() {
+        return alphaConvexHull;
     }
 
+
     /**
-     * @param originPointSet 用于计算α凸包的原始点集
+     * @param originPositionSet 用于计算α凸包的原始点集
      * @param k 是KNN方法中的参数k，表示采用k个邻居的方式
      * @return
      * -1 所给定的点集不能形成闭合的多边形（形成环至少需要3个点形成三角形的闭合）
@@ -53,41 +52,41 @@ public class KNN {
      *  1 计算出包含所有点的α凸包，这是最令人满意的返回结果
      *  2 返回这个表示需要堆参数增加
      * **/
-    public int concaveHull(ArrayList<Point> originPointSet, int k) {
-        ArrayList<Point> pointSet = (ArrayList<Point>) originPointSet.clone();
+    public int concaveHull(ArrayList<Position> originPositionSet, int k) {
+        ArrayList<Position> positionSet = (ArrayList<Position>) originPositionSet.clone();
         // 这里需要保证k一定大于3
         int paramK = Math.max(k, 3);
         // 点集的数量需要足够
-        if (pointSet.size() < 3) {
-            alphaHull.clear();
+        if (positionSet.size() < 3) {
+            alphaConvexHull.clear();
             return POINT_NUM_NOT_ENOUGH;
         }
-        if (pointSet.size() == 3) {
-            alphaHull = (ArrayList<Point>) pointSet.clone();
+        if (positionSet.size() == 3) {
+            alphaConvexHull = (ArrayList<Position>) alphaConvexHull.clone();
             return SUCCESS;
         }
         // 或者是保证k个邻居能够被找到
-        paramK = Math.min(paramK, pointSet.size());
+        paramK = Math.min(paramK, positionSet.size());
         // 选出第一个点插入返回的点集中
 //        Point firstPoint = minPoint;
-        Point firstPoint = findMinYPoint(pointSet);
-        alphaHull.add(firstPoint);
-        Point currentPoint = firstPoint;
+        Position firstPoint = findMinYPoint(positionSet);
+        alphaConvexHull.add(firstPoint);
+        Position currentPoint = firstPoint;
         // 将第一个点加入结果之后，就把它从原来的点集中删除
-        pointSet.remove(firstPoint);
+        positionSet.remove(firstPoint);
 
         double preAngle = 0.0;
         // step实际上就是用来控制下面这个循环的
         int step = 1;
-        while (((currentPoint != firstPoint) || (step == 1)) && (pointSet.size() > 0)) {
+        while (((currentPoint != firstPoint) || (step == 1)) && (positionSet.size() > 0)) {
             // 为了防止最终的包围的点集在k个之前就形成包围圈，因此在3个之后才将firstPoint重新添加回来
             // 第一次想的在k次之后把第一个点添加回来的思路是错的，这样会导致如果没在k之前形成凸包环，那么就一直形成不了
             // 就会导致一直不能停止的死循环
             if (step == 4) {
-                pointSet.add(firstPoint);
+                positionSet.add(firstPoint);
             }
-            ArrayList<Point> nearestKPoints = nearestPoints(pointSet, currentPoint, paramK);
-            ArrayList<Point> sortedPoints = sortByAngle(nearestKPoints, currentPoint, preAngle);
+            ArrayList<Position> nearestKPoints = nearestPoints(positionSet, currentPoint, paramK);
+            ArrayList<Position> sortedPoints = sortByAngle(nearestKPoints, currentPoint, preAngle);
             // 从以上排好序的点中选择第一个不在内部的点
             boolean its = true;
             int i = 0, lastPoint = 0, j = 0;
@@ -99,10 +98,10 @@ public class KNN {
                     lastPoint = 0;
                 }
                 // 无条件添加第二、三个凸包元素。不然的话没办法进行相交判断
-                j = alphaHull.size() - 2;
+                j = alphaConvexHull.size() - 2;
                 its = false;
                 while (!its && (j > lastPoint)) {
-                    its = intersect(currentPoint, sortedPoints.get(i), alphaHull.get(j), alphaHull.get(j - 1));
+                    its = intersect(currentPoint, sortedPoints.get(i), alphaConvexHull.get(j), alphaConvexHull.get(j - 1));
                     -- j;
                 }
                 // 只有在相交的情况之下才进行对已有点的自加，否则会引起超出索引的错误
@@ -116,18 +115,18 @@ public class KNN {
             }
             // 将满足条件的点添加到我们的α凸包中
             currentPoint = sortedPoints.get(i);
-            alphaHull.add(currentPoint);
+            alphaConvexHull.add(currentPoint);
             // 并更新目前的基准角度
-            preAngle = calAngle(alphaHull.get(step), alphaHull.get(step - 1));
+            preAngle = calAngle(alphaConvexHull.get(step), alphaConvexHull.get(step - 1));
             // 移除已经添加过的点
-            pointSet.remove(currentPoint);
+            positionSet.remove(currentPoint);
             ++ step;
         }
         // 当形成一个α凸包之后，我们需要判断是否所有的点全部都已经被计算出来的α凸包包含
         boolean allInside = true;
-        int i = pointSet.size() - 1;
+        int i = positionSet.size() - 1;
         while (allInside && i >= 0) {
-            allInside = pointInPoly(pointSet.get(i), alphaHull);
+            allInside = pointInPoly(positionSet.get(i), alphaConvexHull);
             -- i;
         }
         // 如果还有在剩余的点在计算出来的α凸包外，那么我们需要对参数进行增加
@@ -140,17 +139,17 @@ public class KNN {
 
     /**
      * 本函数的作用就是寻找点集中纬度最低的一点
-     * @param pointSet 待查找的点集
+     * @param positionSet 待查找的点集
      * @return 返回的是纬度最低的哪一点
      * **/
-    private Point findMinYPoint(ArrayList<Point> pointSet) {
+    private Position findMinYPoint(ArrayList<Position> positionSet) {
         double minLatitude = 180.0;
-        Point minYPoint = new Point();
+        Position minYPoint = new Position();
 
-        for (Point point : pointSet) {
-            if (Double.compare(point.getPosition().getLatitude(), minLatitude) < 0) {
-                minLatitude = point.getPosition().getLatitude();
-                minYPoint = point;
+        for (Position position : positionSet) {
+            if (Double.compare(position.getLatitude(), minLatitude) < 0) {
+                minLatitude = position.getLatitude();
+                minYPoint = position;
             }
         }
         return minYPoint;
@@ -158,41 +157,41 @@ public class KNN {
 
     /**
      * 计算点集中与当前点的距离最小的k个
-     * @param currentPoint
-     * @param pointSet
+     * @param currentPosition
+     * @param positionSet
      * @param k
      * @return 返回的是点集中距离当前点最近的k个
      * */
-    private ArrayList<Point> nearestPoints(ArrayList<Point> pointSet, Point currentPoint, int k) {
-        MaxHeap maxHeap = new MaxHeap(currentPoint);
-        return maxHeap.topMinK(pointSet, k);
+    private ArrayList<Position> nearestPoints(ArrayList<Position> positionSet, Position currentPosition, int k) {
+        MaxHeap maxHeap = new MaxHeap(currentPosition);
+        return maxHeap.topMinK(positionSet, k);
     }
 
     /**
      * 根据找出的k个邻近的点与当前点的角度按照从大到小的方式进行排序
-     * @param currentPoint 当前的点
-     * @param nearestPoint 邻近点的集合
+     * @param currentPosition 当前的点
+     * @param nearestPosition 邻近点的集合
      * @param preAngle 之前的角度
      * @return 返回拍好序的邻近点的集合
      * */
-    private ArrayList<Point> sortByAngle(ArrayList<Point> nearestPoint, Point currentPoint, double preAngle) {
-        ArrayList<Point> sortedPointSet = new ArrayList<>();
+    private ArrayList<Position> sortByAngle(ArrayList<Position> nearestPosition, Position currentPosition, double preAngle) {
+        ArrayList<Position> sortedPsitionSet = new ArrayList<>();
 
-        for (Point point : nearestPoint) {
-            double diffAngle = calRelationAngle(currentPoint, point, preAngle);
-            point.setRelativeAngle(diffAngle);
-            sortedPointSet.add(point);
+        for (Position position : nearestPosition) {
+            double diffAngle = calRelationAngle(currentPosition, position, preAngle);
+            position.setRelativeAngle(diffAngle);
+            sortedPsitionSet.add(position);
         }
 
         // 实现使用相对角度来进行对Point中的排序
-        Collections.sort(sortedPointSet, new Comparator<Point>() {
+        Collections.sort(sortedPsitionSet, new Comparator<Position>() {
             @Override
-            public int compare(Point o1, Point o2) {
+            public int compare(Position o1, Position o2) {
                 return Double.compare(o2.getRelativeAngle(), o1.getRelativeAngle());
             }
         });
 
-        return sortedPointSet;
+        return sortedPsitionSet;
     }
 
     /**
@@ -203,7 +202,7 @@ public class KNN {
      * @param pointD
      * @return 返回的结果是true说明两个线段相交，返回false说明两线段是不相交的
      *  */
-    private boolean intersect(Point pointA, Point pointB, Point pointC, Point pointD) {
+    private boolean intersect(Position pointA, Position pointB, Position pointC, Position pointD) {
         Vector vectorAB = new Vector(pointA, pointB);
         Vector vectorAC = new Vector(pointA, pointC);
         Vector vectorAD = new Vector(pointA, pointD);
@@ -227,7 +226,7 @@ public class KNN {
      * @param point2
      * @return 返回这两个点和水平线构成的角度
      * */
-    private double calAngle(Point point2, Point point1) {
+    private double calAngle(Position point2, Position point1) {
         Vector vectorStd = new Vector(1, 0);
         Vector vector = new Vector(point1, point2);
 
@@ -246,17 +245,17 @@ public class KNN {
      * @param point 待测试点
      * @return 返回为true则表示在点击包围的多边形之中，否则在多边形区域之外
      * ***/
-    private boolean pointInPoly(Point point, ArrayList<Point> pointSet) {
+    private boolean pointInPoly(Position point, ArrayList<Position> pointSet) {
         int startPoint = 0, endPoint = pointSet.size() - 1;
         boolean result = false;
 
-        double pointX = point.getPosition().getLongitude();
-        double pointY = point.getPosition().getLatitude();
+        double pointX = point.getLongitude();
+        double pointY = point.getLatitude();
 
         // 这个是根据引射线法计算
         for (; startPoint < pointSet.size(); endPoint = startPoint ++) {
-            double cond = (pointSet.get(endPoint).getPosition().getLongitude() - pointSet.get(startPoint).getPosition().getLongitude()) * (pointY - pointSet.get(startPoint).getPosition().getLatitude()) / (pointSet.get(endPoint).getPosition().getLatitude() - pointSet.get(startPoint).getPosition().getLatitude()) + pointSet.get(startPoint).getPosition().getLongitude();
-            if (((Double.compare(pointSet.get(startPoint).getPosition().getLatitude(), pointY) > 0 ) != (Double.compare(pointSet.get(endPoint).getPosition().getLatitude(), pointY) > 0))
+            double cond = (pointSet.get(endPoint).getLongitude() - pointSet.get(startPoint).getLongitude()) * (pointY - pointSet.get(startPoint).getLatitude()) / (pointSet.get(endPoint).getLatitude() - pointSet.get(startPoint).getLatitude()) + pointSet.get(startPoint).getLongitude();
+            if (((Double.compare(pointSet.get(startPoint).getLatitude(), pointY) > 0 ) != (Double.compare(pointSet.get(endPoint).getLatitude(), pointY) > 0))
                     && (Double.compare(cond, pointX) >= 0)) {
                 if (Double.compare(cond, pointX) == 0) {
                     return true;
@@ -289,7 +288,7 @@ public class KNN {
      * @param preAngle
      * @return  其中向量构成的夹角在preAngle顺时针方向则角度为正，否则为负
      * **/
-    private double calRelationAngle(Point startPoint, Point endPoint, double preAngle) {
+    private double calRelationAngle(Position startPoint, Position endPoint, double preAngle) {
         Vector vector = new Vector(startPoint, endPoint);
         // 将基准角preAngle归一化，如果在一四象限那么横坐标为正，否则为负
         int stdX = 1;
