@@ -3,8 +3,7 @@ package ais.dx.ReadCSV;
 import ais.dx.Config.UserConfig;
 import ais.dx.Util.Util;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -19,6 +18,7 @@ import java.util.HashMap;
  */
 public class ReadCSV {
     private ArrayList<Point> pointSet;
+    private ArrayList<Position> lonlatSet;
     private String csvName;
     private double averageSOG;
     private HashMap<String, ArrayList<Point>> shipClassifyByMMSI;
@@ -28,6 +28,7 @@ public class ReadCSV {
 
     public ReadCSV(String filename) {
         pointSet = new ArrayList<>();
+        lonlatSet = new ArrayList<>();
         csvName = filename;
         averageSOG = 0.0;
         shipClassifyByMMSI = new HashMap<>();
@@ -101,6 +102,58 @@ public class ReadCSV {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * @param filename 待写入的文件名
+     * @exception IOException
+     * 将数据中的经纬度单独提取出来
+     * **/
+    public void  toFile(String filename) {
+        try {
+            File outFile = new File(filename +  ".csv");
+            if (!outFile.exists()) {
+                outFile.createNewFile();
+            }
+
+            FileWriter fileWriter = new FileWriter(outFile.getName(), true);
+            for (Point point : pointSet) {
+                fileWriter.write(point.getPosition().getLongitude() + "," + point.getPosition().getLatitude() + "\n");
+            }
+
+            fileWriter.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    /**
+     * @param filename
+     * @exception IOException
+     * 再次进行阅读文件中的数据
+     * */
+    public void readFile(String filename) {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(filename));
+            reader.readLine();
+
+            String line = null;
+
+            while ((line = reader.readLine()) != null) {
+                String[] lonlat = line.split(",");
+                Position position = new Position(Double.parseDouble(lonlat[0]), Double.parseDouble(lonlat[1]));
+                lonlatSet.add(position);
+            }
+            reader.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public ArrayList<Position> getLonlatSet() {
+        return lonlatSet;
     }
 
     public ArrayList<Point> getPointSet() {

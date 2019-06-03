@@ -22,6 +22,10 @@ public class Vector {
         this(endPoint.getPosition().getLongitude() - startPoint.getPosition().getLongitude(), endPoint.getPosition().getLatitude() - startPoint.getPosition().getLatitude());
     }
 
+    public Vector(Position startPosition, Position endPosition) {
+        this(endPosition.getLongitude() - startPosition.getLongitude(), endPosition.getLatitude() - startPosition.getLatitude());
+    }
+
     /**
      * 计算两个向量的叉乘结果
      * @param vector
@@ -59,6 +63,14 @@ public class Vector {
             return Float.NaN;
         } else {
             return (point1.getPosition().getLatitude() - point2.getPosition().getLatitude()) / (point1.getPosition().getLongitude() - point2.getPosition().getLongitude());
+        }
+    }
+
+    public static double slope(Position position1, Position position2) {
+        if (Double.compare(position1.getLongitude(), position2.getLongitude()) == 0) {
+            return Float.NaN;
+        } else {
+            return (position1.getLatitude() - position2.getLatitude()) / (position1.getLongitude() - position2.getLongitude());
         }
     }
 
