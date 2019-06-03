@@ -1,16 +1,22 @@
 package ais.dx;
 
 import ais.dx.Config.UserConfig;
+import ais.dx.Congest.Density;
+import ais.dx.DB.DB;
 import ais.dx.Process.KNN;
 import ais.dx.ReadCSV.Point;
 import ais.dx.ReadCSV.Position;
 import ais.dx.ReadCSV.ReadCSV;
+import ais.dx.Util.Util;
+import sun.security.krb5.internal.crypto.Des;
 
 import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Set;
 
 public class Main {
 
@@ -19,71 +25,74 @@ public class Main {
 
         reader.readData();
         System.out.println(reader.getPointSet().size());
+        reader.toFile("fuck");
 
         KNN knn = new KNN();
-        ArrayList<Point> dataSet = reader.getPointSet();
+        reader.readFile("fuck.csv");
+        ArrayList<Position> dataSet = reader.getLonlatSet();
 
-        ////////
-        File outFile = new File("date" + UserConfig.USER_START_DAY + UserConfig.USER_START_HOUR + UserConfig.USER_START_MINUTE +  ".txt");
-        if (!outFile.exists()) {
-            outFile.createNewFile();
-        }
+        System.out.println("size fuck !!!:: " + dataSet.size());
 
-        FileWriter fileWriter = new FileWriter(outFile.getName(), true);
-        for (Point point : dataSet) {
-            fileWriter.write(point.getPosition().getLongitude() + "," + point.getPosition().getLatitude() + "\n");
-        }
-
-        fileWriter.close();
-        System.out.println("Almost Done!!");
-        ////////
-
-        int param = 1747;
+        long startTime = System.currentTimeMillis();
+        int param = 1526;
         int result = knn.concaveHull(dataSet, param);
 
         while (result == KNN.RECALCULATE) {
-            if (knn.getAlphaHull() == null) {
+            if (knn.getAlphaConvexHull() == null) {
                 System.out.println("idot");
             } else {
-                System.out.println("fucking size: " + knn.getAlphaHull().size());
+                System.out.println("fucking size: " + knn.getAlphaConvexHull().size());
             }
             knn.clear();
             result = knn.concaveHull(dataSet, ++ param);
         }
-        ArrayList<Point> points = knn.getAlphaHull();
+        ArrayList<Position> points = knn.getAlphaConvexHull();
 
         System.out.println(param + " \t" + result);
         if (points == null) {
             System.out.println("stupid! you got null objects!");
         } else {
-
-            File dataOutFile = new File("out" + UserConfig.USER_START_DAY + UserConfig.USER_START_HOUR + UserConfig.USER_START_MINUTE +  ".txt");
-            if (!dataOutFile.exists()) {
-                dataOutFile.createNewFile();
-            }
-
-            FileWriter dataFileWriter = new FileWriter(dataOutFile.getName(), true);
-
             System.out.println(points.size());
-//            for (Point point : points) {
-////                System.out.println(point.getPosition().getLongitude());
-//                Position startPos = point.getPosition();
-//                Position endPos = point.
-//                dataFileWriter.write("[" + point.getPosition().getLongitude() + "," + point.getPosition().getLatitude() + "],");
-//            }
-            Position startPos = new Position();
-            Position endPos = points.get(0).getPosition();
-            for (int i = 1; i < points.size(); ++ i) {
-                startPos = endPos;
-                endPos = points.get(i).getPosition();
-                dataFileWriter.write("[" + startPos.getLongitude() + "," + startPos.getLatitude() + "]," + "[" + endPos.getLongitude() + "," + endPos.getLatitude() + "]\n");
+
+            System.out.println("***************longitude************");
+            for (Position position : points) {
+                System.out.println(position.getLongitude());
             }
-            dataFileWriter.close();
-//            System.out.println("*******");
-//            for (Point point : points) {
-//                System.out.println(point.getPosition().getLatitude());
-//            }
+            System.out.println("***************latitude************");
+            for (Position position : points) {
+                System.out.println(position.getLatitude());
+            }
+/******
+ *  判断最后的拥堵情况
+ *
+        double area = Util.calArea(points);
+        System.out.println("真实的计算密度" + reader.getShipClassifyByMMSI().size() / area);
+
+        ArrayList<String > ships = new ArrayList<>(reader.getShipClassifyByMMSI().keySet());
+
+        int[] lengths = DB.getShipInfo(ships);
+
+        double turnDensity = Density.density(7, 1, lengths);
+        double congDensity = Density.density(3, 1, lengths);
+
+
+
+        System.out.println("转折密度：" + turnDensity);
+        System.out.println("阻塞密度：" + congDensity);
+
+        System.out.println("素的: " + reader.getAverageSOG());
+
+
+        System.out.println("**************");
+        int counnnn = 0;
+        for (String ship : ships) {
+            System.out.println(ship + "\t" + lengths[counnnn ++]);
+ */
         }
+        long endTime = System.currentTimeMillis();    //获取结束时间
+        System.out.println("程序运行时间：" + (endTime - startTime) + "ms");    //输出程序运行时间
+
+
 
 //        HashMap<String, ArrayList<Point>> points = reader.getShipClassifyByMMSI();
 //
